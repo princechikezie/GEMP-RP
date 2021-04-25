@@ -10,18 +10,45 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r echo=TRUE, tidy=TRUE}
-#Power 
-#T test
+#Power (n = 358, based on N = 5212 @ 5 margin of error and 95% CI)
+#T test (not sure if this appropriate)
 library(pwr)
-cohen.ES(test = "t", size = "small")
-pwr.t.test(n = 358, d = 0.1716136, sig.level = 0.05, type = "one.sample")
-```
+#cohen.ES(test = "t", size = "_______")
 
+#"Effect size is a quantitative measure of the magnitude of the experimental effect. The larger the effect size the stronger the relationship between two variables". 
+
+#small 
+pwr.t.test(n = 358, d = 0.2, sig.level = 0.05, type = "one.sample")
+#medium
+pwr.t.test(n = 358, d = 0.5, sig.level = 0.05, type = "one.sample")
+#large
+pwr.t.test(n = 358, d = 0.8, sig.level = 0.05, type = "one.sample")
+```
 
 ```{r echo=TRUE, tidy=TRUE}
 #Power 
-#T test
+#Chi square test 
 library(pwr)
-cohen.ES(test = "t", size = "small")
+#Df (r-1)(c-1); 
+#r= row (number of observations)
+#c = column (3 categories: practice, skills, competencies)
+#small 
+pwr.chisq.test(w = 0.1, N=5000, df=(714), sig.level=0.05)
+#medium
+pwr.chisq.test(w = 0.3, N=1250, df=(714), sig.level=0.05)
+#large
+pwr.chisq.test(w = 0.5, N=500, df=(714), sig.level=0.05)
 ```
+```{r echo=TRUE, tidy=TRUE}
+#Power 
+#Chi square test 
+library(pwr)
 
+#working out sample size needed
+#small 
+pwr.chisq.test(w = 0.1, df = 714, power = 0.8, sig.level=0.05)
+#med 
+pwr.chisq.test(w = 0.3, df = 714, power = 0.8, sig.level=0.05)
+#large
+pwr.chisq.test(w = 0.5, df = 714, power = 0.8, sig.level=0.05)
+```
