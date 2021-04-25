@@ -1,0 +1,27 @@
+---
+title: "Pilot study"
+author: "Prince Chikezie"
+date: "28/12/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=TRUE, tidy=TRUE}
+#Power 
+#T test
+library(pwr)
+cohen.ES(test = "t", size = "small")
+pwr.t.test(n = 358, d = 0.1716136, sig.level = 0.05, type = "one.sample")
+```
+
+
+```{r echo=TRUE, tidy=TRUE}
+#Power 
+#T test
+library(pwr)
+cohen.ES(test = "t", size = "small")
+```
+
