@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 #Chi square test 
 library(pwr)
 #Df: ordinal association so Df = 1
-
+#Sample size?
 #small 
 pwr.chisq.test(w = 0.1, N=358, df=(1), sig.level=0.05)
 #medium
@@ -35,4 +35,31 @@ pwr.chisq.test(w = 0.1, df = 1, power = 0.8, sig.level=0.05)
 pwr.chisq.test(w = 0.3, df = 1, power = 0.8, sig.level=0.05)
 #large
 pwr.chisq.test(w = 0.5, df = 1, power = 0.8, sig.level=0.05)
+```
+```{r echo=TRUE, tidy=TRUE}
+#Power 
+#Chi square test 
+library(pwr)
+
+#working out sample size needed
+#small 
+pwr.chisq.test(w = 0.1, df = 1, power = 0.9, sig.level=0.05)
+#med 
+pwr.chisq.test(w = 0.3, df = 1, power = 0.9, sig.level=0.05)
+#large
+pwr.chisq.test(w = 0.5, df = 1, power = 0.9, sig.level=0.05)
+```
+
+```{r echo=TRUE, tidy=TRUE}
+#Power 
+#Chi square test 
+library(pwr)
+
+#working out sample size needed
+#small 
+pwr.chisq.test(w = 0.1, df = 1, power = 0.95, sig.level=0.05)
+#med 
+pwr.chisq.test(w = 0.3, df = 1, power = 0.95, sig.level=0.05)
+#large
+pwr.chisq.test(w = 0.5, df = 1, power = 0.95, sig.level=0.05)
 ```
